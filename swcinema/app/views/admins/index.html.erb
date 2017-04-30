@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id movie</th>
+      <th>Name</th>
+      <th>Time</th>
+      <th>Duration</th>
+      <th>Price</th>
+      <!--<th>Id seat</th>
+      <th>Status</th>-->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tmp="" %>
+    <% @admins.each do |admin| %>
+      <% if @tmp!=admin.id_movie %>
+      <tr>
+        <td><%= admin.id_movie %></td>
+        <td><%= admin.name %></td>
+        <td><%= admin.time %></td>
+        <td><%= admin.duration %></td>
+        <td><%= admin.price %></td>
+        <!--<td><%= admin.id_seat %></td>
+        <td><%= admin.status %></td>-->
+        <td><%= link_to 'Show', admin %></td>
+        <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
+        <td><%= link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+      <% @tmp=admin.id_movie %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_admin_path %>
+
+<%= link_to 'Back', admins_home_path %>

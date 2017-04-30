@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id movie:</strong>
+  <%= @admin.id_movie %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @admin.name %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @admin.time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @admin.duration %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @admin.price %>
+</p>
+
+<!--<p>
+  <strong>Id seat:</strong>
+  <%= @admin.id_seat %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @admin.status %>
+</p>-->
+
+<%= link_to 'Edit', edit_admin_path(@admin) %> |
+<%= link_to 'Back', admins_path %>
